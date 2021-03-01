@@ -5,7 +5,8 @@ export const loadTodoListApi = async() => {
     method: 'GET',
   });
   if(response.ok) {
-    return await response.json().then((data) => data);
+    const data = await response.json()
+    return data;
   } else {
     throw new Error('데이터를 로드하는데 문제 발생');
   }
@@ -33,7 +34,7 @@ export const deleteTodoListApi = async(id) => {
     method: 'DELETE',
   })
   if(response.ok) {
-    return await loadTodoListApi();
+    return await loadTodoListApi(); // 삭제하고 다시 로드
   } else {
     throw new Error('데이터를 삭제하는데 문제 발생');
   }

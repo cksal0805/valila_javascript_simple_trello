@@ -6,12 +6,13 @@ class TodoList {
     this.state = {
       todos,
     };
+    this.onDeleteTodo = onDeleteTodo;
   }
   todoListRender = (todo) => {
     return (
       `<li key="${todo._id}">
         <p>${todo.content}</p>
-        <button type="button">삭제</button>
+        <button type="button" onclick="${() => alert('a')}">삭제</button>
       </li>`
     );
   }

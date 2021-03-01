@@ -27,7 +27,7 @@ class App {
         try {
           const todos = await deleteTodoListApi(id);
           console.log(todos);
-          // await this.setState(todos);
+          await this.setState(todos);
         } catch(error) {
           console.error(error);
           alert(error);

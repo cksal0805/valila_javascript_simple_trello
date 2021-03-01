@@ -6,7 +6,7 @@ class TodoInput {
     $App.appendChild(this.$target);
     this.$target.addEventListener('keyup', (e) => {
       if (e.key === 'Enter') {
-        if(e.target.value !== '') {
+        if(this.$target.value !== '') {
           onAdd(e.target.value);
           this.$target.value = '';
         } else {
